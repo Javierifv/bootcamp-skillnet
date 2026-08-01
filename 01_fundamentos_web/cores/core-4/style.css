@@ -1,0 +1,51 @@
+* {
+    font-family: sans-serif;
+}
+.tarjeta{
+    /* width: 500px; */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #fff;
+    border-radius: 12px;
+    width: 500px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.celeste {
+    height: 120px;
+    background-color: #66b9d1;
+    border-radius: 12px 12px 0 0;
+}
+
+img {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    border: 2px solid white;
+    border-radius: 50%;
+
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 36px;
+}
+
+p.ciudad {
+    color: #333333;
+}
+
+p {
+    color: #666666;
+}
+
+button {
+    width: 100px;
+    height: 35px;
+    border: white;
+    border-radius: 5px;
+}

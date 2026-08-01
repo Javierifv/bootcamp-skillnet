@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Network</h1>
+    </header>
+    <h1 id="feed">Your Feed</h1>
+    <main>
+        <section class="izquierda">
+            <article class="perfil">
+                <img src="images/perfil.png" alt="Imagen de perfil">
+                <h3>Adrien Desplatz</h3>
+            </article>
+        </section>
+        <section class="derecha">
+            <article class="tarjeta">
+                <div class="top">
+                    <h2>Linn O.</h2>
+                    <div class="likes">
+                        <p><span id="span1">0</span> like(s)</p>
+                        <button onclick="darLike1()" class="like">Like</button>
+                    </div>
+                </div>
+                <div class="bot">
+                    <p>Acabo de configurar este nuevo bot de Discord, cuéntenme que opinan ustedes.
+                        <a href="#">link</a>
+                    </p>
+                </div>
+            </article>
+            <article class="tarjeta">
+                <div class="top">
+                    <h2>Lina K.</h2>
+                    <div class="likes">
+                        <p><span id="span2">0</span> like(s)</p>
+                        <button onclick="darLike2()" class="like">Like</button>
+                    </div>
+                </div>
+                <div class="bot">
+                    <p>Acabo terminar este <a href="#">nuevo comic</a>, denle un vistazo.
+                    </p>
+                </div>
+            </article>
+            <article class="tarjeta">
+                <div class="top">
+                    <h2>Mateo H.</h2>
+                    <div class="likes">
+                        <p><span id="span3">0</span> like(s)</p>
+                        <button onclick="darLike3()" class="like">Like</button>
+                    </div>
+                </div>
+                <div class="bot">
+                    <p>No puedo dejar de escuchar este <a href="#">álbum</a>. ¿A quién más le gusta?
+                    </p>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

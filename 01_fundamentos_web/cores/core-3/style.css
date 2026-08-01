@@ -1,0 +1,46 @@
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 150px;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.amarillo {
+    display: flex;
+    flex-direction: row;
+    background-color: #f1cc45;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.celeste {
+    display: flex;
+    flex-direction: row;
+    background-color: #8ccbfa;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.celeste img {
+    width: 250px;
+    height: 150px;
+}
+
+.rojo {
+    display: flex;
+    flex-direction: row;
+    background-color: #e4716b;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.verde {
+    background-color: #b7faa3;
+    text-align: center;
+}

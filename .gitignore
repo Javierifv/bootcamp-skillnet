@@ -1,0 +1,16 @@
+# Repositorio del profesor y archivos descargados
+repo_profesor/
+b2b-bhp-python-2026-main.zip
+
+# Python & Entornos Virtuales
+__pycache__/
+*.pyc
+.venv/
+env/
+Pipfile.lock
+
+# Archivos de SO y Editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.mwb.bak
