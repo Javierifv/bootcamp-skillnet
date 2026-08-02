@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Lotería Mexicana</h1>
+    <div class="tablero">
+        {% for i in range(filas): %}
+            <div class="fila">
+                {% for j in range(columnas): %}
+                    {# Obtenemos el índice de la lista cartas usando (i * columnas + j) #}
+                    {% set indice_carta = i * columnas + j %}
+                    {% set color_actual = colores[(i + j) % 3] %}
+                    
+                    <div class="carta" style="background-color: {{ color_actual }};">
+                        <p>{{ cartas[indice_carta] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
