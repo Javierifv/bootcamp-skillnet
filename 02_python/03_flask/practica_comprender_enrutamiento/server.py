@@ -33,5 +33,9 @@ def repite(numero, cadena):
     print(cadena)
     return f'Repite después de mi: {cadena*numero}'
 
+@app.errorhandler(404)
+def pagina_no_encontrada(error):
+    return "¡Sobrecarga de rutas! No encontramos a donde quieres ir, inténtalo de nuevo.", 404
+
 if __name__=="__main__":  
     app.run(debug=True)

@@ -18,7 +18,7 @@ def lista_paises():
         {'pais': 'Perú' , 'capital': 'Lima'}
     ]
 
-    return render_template('paises.html', paises=paises)
+    return render_template('index.html', paises=paises)
 
 if __name__=="__main__":
     app.run(debug=True)
