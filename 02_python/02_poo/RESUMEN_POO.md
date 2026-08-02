@@ -89,3 +89,34 @@ Permite que clases hijas utilicen el mismo nombre de método que su clase padre,
 
 ### 🕹️ D. Abstracción
 Ocultar los detalles internos complejos y ofrecer una interfaz simple para interactuar.
+
+---
+
+## 6. Módulos, Paquetes y la variable `__name__`
+
+* **Módulo**: Archivo individual `.py`.
+* **Paquete**: Carpeta que agrupa varios módulos (en Flask incluye un `__init__.py`).
+* **Sintaxis de Importación**: `from paquete.modulo import Clase`.
+* **Controlador `if __name__ == "__main__":`**:
+  * Si el archivo se ejecuta **directamente**, `__name__` vale `"__main__"`.
+  * Si el archivo se **importa desde otro script**, `__name__` toma el nombre del módulo (ej: `"tamagotchi"`).
+
+```python
+if __name__ == "__main__":
+    # Código de prueba o arranque del servidor (solo corre si ejecutas este archivo)
+    print("Ejecutando script principal directamente")
+```
+
+---
+
+## 7. Entradas y Salidas por Consola (`input()` y `print()`)
+
+* **`input(prompt)`**: Detiene la ejecución y espera a que el usuario ingrese un valor por consola. **Importante**: Siempre retorna un string (`str`).
+* **Conversión de Tipos**: Si necesitas ingresar números, debes castear la entrada con `int()` o `float()`.
+
+```python
+nombre = input("¿Cómo te llamas? ")
+edad = int(input("¿Cuántos años tienes? "))
+
+print(f"¡Hola {nombre}! El próximo año tendrás {edad + 1} años.")
+```
