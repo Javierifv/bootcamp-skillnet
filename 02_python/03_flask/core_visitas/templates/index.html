@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visitas</title>
+</head>
+<body>
+    <h1>Contador de Visitas</h1>
+    <h2>Has visitado este sitio {{ session['visitas'] }} veces</h2>
+    <p>El contador ha sido reiniciado {{ session['reinicios'] }} veces</p>
+    <div>
+        <form action="/mas_dos" method="POST">
+            <input type="submit" value="+2 Visitas">
+        </form>
+    </div>
+    <div>
+        <a href="/destruir_sesion">
+            <button>Reiniciar</button>
+        </a>
+    </div>
+    <div>
+        <form action="/incrementar" method="POST">
+            <label>Ingresa cantidad a sumar:</label>
+            <input type="number" name="incremento">
+            <input type="submit" value="Sumar">
+        </form>
+    </div>
+</body>
+</html>
