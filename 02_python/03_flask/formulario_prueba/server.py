@@ -18,7 +18,13 @@ def crear_usuario():
     print(request.form)
 
     #JAMAS renderizamos una plantilla ante una solicitud POST
-    return redirect('/final') #En su lugar, redirigimos a otra ruta
+    return redirect('/mostrar_usuario') #En su lugar, redirigimos a otra ruta
+
+@app.route('/mostrar_usuario')
+def mostrar_usuario():
+    print("Usuario redirigido")
+    print(request.form) #Imprime un diccionario vacío, porque no tenemos acceso a esta información
+    return render_template("mostrar.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
