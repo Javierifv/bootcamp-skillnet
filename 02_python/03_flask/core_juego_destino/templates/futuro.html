@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Destino</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="texto-destino">
+        {% if session['suerte'] == 'buena' %}
+            Soy el adivino del Dojo, 
+            <span class="nombre">{{ session['nombre'] }}</span> tendrá un viaje muy largo dentro de 
+            <span class="numero">{{ session['numero'] }}</span> años a 
+            <span class="lugar">{{ session['lugar'] }}</span> y estará el resto de sus días preparando 
+            <span class="comida">{{ session['comida'] }}</span> para todas las personas que quiere.
+            <br>
+            Cambió de profesión y ahora es <span class="profesion">{{ session['profesion'] }}</span>.
+        {% else %}
+            Soy el adivino del Dojo, 
+            <span class="nombre">{{ session['nombre'] }}</span> tendrá 
+            <span class="numero">{{ session['numero'] }}</span> años de mala suerte, nunca conocerá 
+            <span class="lugar">{{ session['lugar'] }}</span> y jamás volvió a comer 
+            <span class="comida">{{ session['comida'] }}</span>.
+        {% endif %}
+    </div>
+
+    <div>
+        <a href="/reiniciar">¡Jugar de nuevo!</a>
+    </div>
+
+</body>
+</html>

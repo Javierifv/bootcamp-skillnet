@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="eN">
+<head>
+    <meta charset="UTF-8">
+    <title>Lotería Mexicana 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>¡Bienvenido a Lotería Mexicana 2!</h1>
+    <p>Elegiremos una carta aleatoria de la lotería y tú debes de adivinar el número de la carta</p>
+
+    {% if not session['resultado'] %}
+        <div class="caja inicial">¡Intenta adivinar el número!</div>
+    
+    {% elif session['resultado'] == 'menor' %}
+        <div class="caja menor">Tu número es menor al de la carta</div>
+    {% elif session['resultado'] == 'mayor' %}
+        <div class="caja mayor">Tu número es mayor al de la carta</div>
+    
+    {% elif session['resultado'] == 'correcto' %}
+        <div class="caja correcto">
+            ¡Lotería! El número es {{ session['numero_secreto'] }}<br>
+            y su carta es {{ session['carta_ganadora'] }}
+        </div>
+        <div style="margin-top: 15px;">
+            <a href="/reiniciar" class="btn-jugar">Jugar de nuevo</a>
+        </div>
+    
+    {% elif session['resultado'] == 'perdio' %}
+        <div class="caja perdio">
+            ¡Se agotaron los 5 intentos!<br>
+            El número era {{ session['numero_secreto'] }} ({{ session['carta_ganadora'] }})
+        </div>
+        <div style="margin-top: 15px;">
+            <a href="/reiniciar" class="btn-jugar">Jugar de nuevo</a>
+        </div>
+    {% endif %}
+
+    {% if session['resultado'] != 'correcto' and session['resultado'] != 'perdio' %}
+        <div style="margin-top: 15px;">
+            <form action="/adivinar" method="POST">
+                <input type="number" name="suposicion" min="1" max="54" placeholder="1-54" required>
+                <input type="submit" value="Adivina!">
+            </form>
+        </div>
+    {% endif %}
+
+</body>
+</html>

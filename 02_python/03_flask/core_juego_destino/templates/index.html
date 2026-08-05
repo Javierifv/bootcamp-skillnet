@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego del Destino</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>¿Quieres conocer tu futuro?</h1>
+    <p>Coloca las respuestas y te diremos tu destino</p>
+
+    <div class="caja-formulario">
+        <form action="/enviar" method="POST">
+            <div class="campo">
+                <label>Tu nombre:</label>
+                <input type="text" name="nombre" class="entrada">
+            </div>
+
+            <div class="campo">
+                <label>Un lugar:</label>
+                <input type="text" name="lugar" class="entrada">
+            </div>
+
+            <div class="campo">
+                <label>Un número:</label>
+                <input type="number" name="numero" class="entrada">
+            </div>
+
+            <div class="campo">
+                <label>Tu comida favorita:</label>
+                <input type="text" name="comida" class="entrada">
+            </div>
+
+            <div class="campo">
+                <label>Elige una profesión:</label>
+                <select name="profesion" class="entrada">
+                    <option value="Desarrollador Web">Desarrollador Web</option>
+                    <option value="Astronauta">Astronauta</option>
+                    <option value="Chef">Chef</option>
+                    <option value="Detective">Detective</option>
+                    <option value="Músico">Músico</option>
+                </select>
+            </div>
+
+            <button type="submit" class="boton-enviar">Ver mi destino</button>
+        </form>
+    </div>
+
+</body>
+</html>

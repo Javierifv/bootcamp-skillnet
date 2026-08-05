@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    color: #212529;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.caja {
+    width: 380px;
+    margin: 20px auto;
+    padding: 25px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    line-height: 1.2;
+}
+
+.inicial {
+    background-color: #f0c244;
+}
+
+.menor, .mayor, .perdio {
+    background-color: #d93848;
+}
+
+.correcto {
+    background-color: #398453;
+}
+
+input[type="number"] {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 160px;
+}
+
+input[type="submit"], .btn-jugar {
+    background-color: #2b76fb;
+    color: white;
+    padding: 9px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+input[type="submit"]:hover, .btn-jugar:hover {
+    background-color: #1a65eb;
+}
