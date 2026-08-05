@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Reliquias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Tus reliquias: {{ session['reliquias'] }}</h1>
+    <p>Exploraciones realizadas: {{ session['intentos'] }} de 15</p>
+
+    <!-- Mensajes de Victoria / Derrota (Bonus Oro) -->
+    {% if session['gano'] %}
+        <div class="mensaje-victoria">
+            ¡Felicidades! Lograste conseguir {{ session['reliquias'] }} reliquias en {{ session['intentos'] }} exploraciones.<br>
+            <a href="/reiniciar" class="btn-reiniciar">Reiniciar Juego</a>
+        </div>
+    {% elif session['perdio'] %}
+        <div class="mensaje-derrota">
+            ¡Se agotaron las 15 exploraciones! Conseguiste un total de {{ session['reliquias'] }} reliquias.<br>
+            <a href="/reiniciar" class="btn-reiniciar">Reiniciar Juego</a>
+        </div>
+    {% endif %}
+
+    <!-- 4 Tarjetas de Exploración (Solo se muestran si el juego sigue activo) -->
+    {% if not session['gano'] and not session['perdio'] %}
+        <div class="contenedor-tarjetas">
+            <!-- 1. Templo -->
+            <div class="tarjeta">
+                <h3>Templo</h3>
+                <p>Ganas 10-20 reliquias</p>
+                <form action="/buscar_reliquias" method="POST">
+                    <input type="hidden" name="lugar" value="templo">
+                    <input type="submit" value="Encontrar reliquias!" class="btn-encontrar">
+                </form>
+            </div>
+
+            <!-- 2. Pirámide -->
+            <div class="tarjeta">
+                <h3>Pirámide</h3>
+                <p>Ganas 5-10 reliquias</p>
+                <form action="/buscar_reliquias" method="POST">
+                    <input type="hidden" name="lugar" value="piramide">
+                    <input type="submit" value="Encontrar reliquias!" class="btn-encontrar">
+                </form>
+            </div>
+
+            <!-- 3. Selva -->
+            <div class="tarjeta">
+                <h3>Selva</h3>
+                <p>Ganas 2-5 reliquias</p>
+                <form action="/buscar_reliquias" method="POST">
+                    <input type="hidden" name="lugar" value="selva">
+                    <input type="submit" value="Encontrar reliquias!" class="btn-encontrar">
+                </form>
+            </div>
+
+            <!-- 4. Ruinas -->
+            <div class="tarjeta">
+                <h3>Ruinas</h3>
+                <p>Ganas/Pierdes 0-50 reliquias</p>
+                <form action="/buscar_reliquias" method="POST">
+                    <input type="hidden" name="lugar" value="ruinas">
+                    <input type="submit" value="Encontrar reliquias!" class="btn-encontrar">
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+    <h2>Actividades</h2>
+
+    <!-- Caja de Historial de Actividades (Uso de {{ actividad|safe }} según la lección) -->
+    <div class="caja-actividades">
+        {% for actividad in session['actividades'] %}
+            {{ actividad|safe }}
+        {% endfor %}
+    </div>
+
+    <div style="margin-top: 15px;">
+        <a href="/reiniciar">Reiniciar Juego</a>
+    </div>
+
+</body>
+</html>

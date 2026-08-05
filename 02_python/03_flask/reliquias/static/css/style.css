@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px;
+    color: #212529;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de Tarjetas Horizontales (Flexbox) */
+.contenedor-tarjetas {
+    display: flex;
+    gap: 0;
+    margin-bottom: 30px;
+}
+
+.tarjeta {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+.tarjeta h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.tarjeta p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* Botones Verdes */
+.btn-encontrar {
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn-encontrar:hover {
+    background-color: #157347;
+}
+
+.btn-reiniciar {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Caja de Actividades */
+.caja-actividades {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    height: 220px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.texto-verde {
+    color: #198754;
+    margin: 6px 0;
+}
+
+.texto-rojo {
+    color: #dc3545;
+    margin: 6px 0;
+}
+
+.mensaje-victoria {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.mensaje-derrota {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
